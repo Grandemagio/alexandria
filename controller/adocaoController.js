@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const conexao = require('../database/connection');
+const autenticarToken = require('../middleware/auth');
+
 const statusPermitidos = ['solicitada', 'em_analise', 'aprovada', 'recusada', 'concluida'];
+
 
 // GET /adocao - listar solicitações
 router.get('/', (req, res) => {
